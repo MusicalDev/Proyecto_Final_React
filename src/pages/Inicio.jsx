@@ -4,13 +4,13 @@ import styles from './Inicio.module.css';
 const noticias = [
   {
     id: 1,
-    imagen: 'caña.webp', 
+    imagen: 'cañas-de-oboe.webp', 
     texto: 'Nueva línea de cañas para oboe profesional disponible a partir de este mes.'
   },
   {
     id: 2,
     imagen: 'lutheria.webp',
-    texto: 'Nuestro luthier estrella dará un taller de mantenimiento de oboes en París.'
+    texto: 'Nuestra luthier estrella dará un taller de mantenimiento de oboes en París.'
   },
   {
     id: 3,
