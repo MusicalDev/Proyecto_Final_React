@@ -1,5 +1,92 @@
-body {
-  font-family: "Lucida Console", Courier, monospace;
-  max-width: 70%;
-  margin: 0 auto;
+
+/* colors: 
+~Ink Black
+#0d1b2a
+~Prussian Blue
+#1b263b
+~Dusk Blue
+#415a77
+~Lavender Grey
+#778da9
+~Alabaster Grey
+#e0e1dd */
+
+
+/* 
+@media (max-width: 1400px) { }
+
+
+@media (max-width: 1200px) { }
+
+
+@media (max-width: 992px) { }
+
+
+@media (max-width: 768px) { }
+
+
+@media (max-width: 576px) { } */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap');
+
+html {
+  height: 100%;
+  margin: 0;
+}
+
+body { 
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  color: #1a1a1aff;
+  background-color: #778da9;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  position: relative;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 110px;
+  position: relative;
+  z-index: 1; 
+    background-color: #e0e1ddef; 
+}
+
+.grid-background {
+  position: fixed; 
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0; 
+  background-image: 
+    linear-gradient(to right, #0d1b2a 1px, transparent 1px),
+    linear-gradient(to bottom, #0d1b2a 1px, transparent 1px);
+  background-size: 20px 30px;
+  -webkit-mask-image: radial-gradient(
+    ellipse 70% 60% at 50% 0%,
+    #000 60%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    ellipse 70% 60% at 50% 0%,
+    #000 60%,
+    transparent 100%
+  );
+  pointer-events: none;
+
+.fugaz-one-regular {
+  font-family: "Fugaz One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
 }

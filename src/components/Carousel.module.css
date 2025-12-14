@@ -1,0 +1,283 @@
+/* Carousel.module.css */
+
+/* Contenedor principal */
+.carouselContainer {
+  width: 100%;
+  max-width: 1200px;
+  height: 550px;             
+  position: relative;
+  overflow: hidden;           
+  border-radius: 10px;        
+  margin: 20px 40px;
+  padding-left: 20px;
+  padding-right: 20px;               
+
+}
+.carouselInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+
+
+
+/* Cada slide individual */
+.carouselItem {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: opacity 0.6s ease-in-out;
+  z-index: 0;
+  width: 100%;
+  height: 100%;  
+  margin: 0;
+  padding: 0;
+}
+/* Animación de entrada */
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+  }
+  to { 
+    opacity: 1; 
+  }
+}
+
+/* Slide activo */
+.carouselItem.active {
+  opacity: 1;
+  z-index: 10;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Slide inactivo */
+.carouselItem.inactive {
+  opacity: 0;
+  z-index: 0;
+}
+
+/* Overlay oscuro sobre las imágenes */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* Caption (texto sobre la imagen) */
+.caption {
+  position: absolute;
+  bottom: 5rem;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: white;
+  padding: 0 1rem;
+  z-index: 20;
+}
+
+.captionTitle {
+  font-size: 1.9rem;
+  font-weight: bold;
+  margin-bottom: 0.1rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 1);
+  font-family: "Montserrat", sans-serif;
+  color: #e0e1dd;
+}
+
+.captionDescription {
+  font-size: 1.2rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
+  margin-bottom: 0.75rem;
+  color: #e0e1dd ;
+  font-weight: 400;
+}
+
+.clickIndicator {
+  display: inline-block;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+  background-color: rgba(29, 29, 29, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.carouselItem:hover .clickIndicator {
+  background-color: rgba(32, 32, 32, 1);
+  transform: translateX(5px);
+}
+
+/* Controles de navegación (flechas) */
+.control {
+  position: absolute;
+  top: 50%;
+  margin-left:20px;
+  margin-right:20px;
+  transform: translateY(-50%);
+  z-index: 30;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 1rem;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.5rem;
+  height: 3.5rem;
+}
+
+.arrow {
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 400;
+  color: white;
+  position: relative;
+  top: -6px;
+  
+}
+
+.control:hover:not(:disabled) {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.control:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.controlPrev {
+  left: 1rem;
+}
+
+.controlNext {
+  right: 1rem;
+}
+
+/* Indicadores (puntos) */
+.indicators {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  z-index: 30;
+}
+
+.indicator {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.indicator:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.indicatorActive {
+  background-color: white;
+  width: 2rem;
+  border-radius: 0.375rem;
+}
+
+/* Media Queries para responsive */
+@media (max-width: 768px) {
+  .carouselContainer {
+    width: 95%;
+    height: 400px;
+    margin: 1rem auto;
+  }
+
+  .captionTitle {
+    font-size: 1.5rem;
+  }
+
+  .captionDescription {
+    font-size: 0.875rem;
+  }
+
+  .caption {
+    bottom: 2.5rem;
+  }
+
+  .control {
+    padding: 0.75rem;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .arrow {
+    font-size: 2.5rem;
+  }
+
+  .controlPrev {
+    left: 0.5rem;
+  }
+
+  .controlNext {
+    right: 0.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .carouselContainer {
+    width: 95%;
+    height: 600px;
+    margin: 0.5rem auto;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  .captionTitle {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .captionDescription {
+    font-size: 0.75rem;
+  }
+
+  .caption {
+    bottom: 2rem;
+    padding: 0 0.5rem;
+  }
+
+  .indicators {
+    gap: 0.5rem;
+    bottom: 0.75rem;
+  }
+
+  .indicator {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+
+  .indicatorActive {
+    width: 1.5rem;
+  }
+
+  .control {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .arrow {
+    font-size: 2rem;
+  }
+}
+

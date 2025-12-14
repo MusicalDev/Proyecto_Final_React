@@ -1,60 +1,411 @@
-.header {
+
+/* HEADER GENERAL */
+
+.headerCustom {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  padding: 0 20px;
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 27, 42, 1) 0%,
+    rgba(13, 27, 42, 1) 50%,
+    rgba(13, 27, 42, 1) 100%
+  );
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.35s ease-in-out;
+}
+
+@media (min-width: 1200px) {
+  .headerCustom {
+    padding: 0px 100px;
+  }
+}
+
+.headerHidden {
+  transform: translateY(-120%);
+}
+
+/* CONTENEDOR NAVBAR */
+.navbarCustom {
+  width: 100%;
   display: flex;
-  justify-content: space-between; 
-  align-items: center; 
-  padding: 10px 40px;
-  border-bottom: 1px solid #eee;
+  align-items: center;
+  position: relative;
+  padding: 10px 0;
 }
 
-.logo {
-  flex-basis: 20%; 
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-}
-
-.navbarContainer {
-  flex-basis: 60%; 
-  text-align: center;
-}
-
-.iconsContainer {
-  flex-basis: 20%; 
+/* LOGO */
+.logoCustom {
+  z-index: 10;
   display: flex;
-  justify-content: flex-end; 
-  
+  align-items: center;
 }
 
-.iconoDeCarrito {
+/* MENÚ CENTRADO */
+#menuPrincipal {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  min-width: 480px;
+}
+
+
+
+/* NAVBAR LINKS */
+@media (min-width: 992px) {
+  .navbar {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    white-space: nowrap;
+  }
+}
+
+@media (max-width: 991px) {
+  .navbar {
+    position: static !important;
+    transform: none !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 15px !important;
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  .navbar a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 12px 12px;
+    margin-bottom: 14px;
+  }
+}
+
+/* Fondo del collapse en mobile */
+.navbar-collapse.show {
+  background-color: #7d97b3ff;
+  padding: 20px 0;
+}
+
+/* ICONOS DERECHA */
+.rightIcons {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 10;
+}
+
+@media (max-width: 991px) {
+  .rightIcons {
+    width: 100%;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin-top: 20px;
+    gap: 15px !important;
+  }
+}
+
+/* BOTÓN INGRESA */
+.loginBtnCustom {
+  background-color: #0d1b2a;
+  color: #e0e1dd;
+  border: none;
+  padding: 6px 14px;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  transition: 0.2s ease-in-out;
+}
+
+.loginBtnCustom:hover {
+  background-color: #1a3058ff;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* CARRITO */
+.iconoDeCarritoCustom {
   position: relative;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
-.contadorDeCarrito {
+.contadorDeCarritoCustom {
   position: absolute;
-  top: -8px; 
-  right: -10px; 
-  background-color: rgb(228, 42, 42);
-  color: white;
-  border-radius: 50%;
-  padding: 3px 6px;
-  font-size: 11px;
+  top: -6px;
+  right: -8px;
+  background: #ffca1a;
+  color: black;
   font-weight: bold;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 11px;
   line-height: 1;
 }
 
-.icono {
-  font-size: 24px;
-  cursor: pointer;
-  margin: 0;
+.iconoCarrito {
+  color: #0d1b2a;
+  transition: transform 0.2s ease-in-out;
 }
 
-.login {
-  font-family: "Lucida Console", Courier, monospace;
+.iconoCarrito:hover {
+  color: #000000ff;
+  transform: translateY(-3px) scale(1.08);
+}
+
+/* LINKS DEL MENÚ */
+.lista {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+.item {
+  margin: 10px 0;
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+  padding: 6px;
+  margin: 0 5px;
+  font-weight: bold;
   font-size: 14px;
-  border: none;
-  background-color: transparent;
-  outline: none;
-  text-decoration: none;
-  margin: 5px 20px  0px;
+  color: #f1f1e5;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+/* BORDES */
+.link::before,
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: calc(50% - 7px);
+  border: 1px solid #fcc735ff;
+  transition: all 0.15s ease;
+  z-index: 10;
+}
+
+.link::before {
+  top: 0;
+  border-bottom-width: 0;
+}
+
+.link::after {
+  bottom: 0;
+  border-top-width: 0;
+}
+
+/* INTERIOR */
+.linkInner {
+  position: relative;
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #0d1b2a;
+  color: #ffffff;
+  overflow: hidden;
+  z-index: 5;
+  bottom: -3px;
+}
+
+.linkText {
+  position: relative;
+  z-index: 7;
+}
+
+/* SLICE */
+.slice {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -12px;
+  width: 0;
+  background-color: #ff4655;
+  transform: skew(-15deg);
+  transition: width 0.22s ease;
+  z-index: 6;
+  pointer-events: none;
+}
+
+/* PUNTOS */
+.linkInner::before,
+.linkInner::after {
+  content: "";
+  position: absolute;
+  background-color: #d6d6d6ff;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+  z-index: 9;
+}
+
+.linkInner::before {
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+}
+
+.linkInner::after {
+  right: 0;
+  bottom: 0;
+  width: 4px;
+  height: 4px;
+}
+
+/* HOVER EFECTOS */
+.link:hover .slice {
+  width: calc(100% + 20px);
+}
+
+.link:hover .linkInner::after,
+.link:hover .linkInner::before {
+  opacity: 1;
+}
+
+.link:hover::before,
+.link:hover::after {
+  border-color: #e0e1dd ;
+}
+
+.link:hover .linkText {
+  color: #e0e1dd ;
+}
+
+
+
+/* BOTÓN */
+.custom-toggler {
+  padding: 6px 10px;
+  background-color: #e0e1dd;
+  border: 2px solid #fcc735;
+  border-radius: 6px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+/* LÍNEAS */
+.custom-toggler span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background-color: #d6dce2ff;
+  transition: 0.3s ease-in-out;
+  border-radius: 2px;
+}
+
+/* ANIMACIÓN HAMBURGUESA → X */
+.custom-toggler.active span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.custom-toggler.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.custom-toggler.active span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+.navbar-toggler .navbar-toggler-icon {
+  background-color: #e0e1dd !important;
+}
+
+
+/* Header.module.css */
+
+.logoCustom {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.logoCustom:hover {
+  transform: scale(1.05);
+}
+
+/* Animación del SVG */
+.logoCustom svg {
+  transition: all 0.4s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.logoCustom:hover svg {
+  filter: drop-shadow(0 4px 12px rgba(233, 65, 79, 0.5));
+  transform: rotate(-5deg);
+}
+
+/* Animación de las partes del círculo */
+.logoCustom svg path {
+  transition: fill 0.4s ease;
+}
+
+.logoCustom:hover svg path {
+  fill: #1b263b;
+}
+
+/* Animación del círculo exterior */
+.logoCustom svg circle {
+  transition: all 0.4s ease;
+  stroke-dasharray: 427;
+  stroke-dashoffset: 0;
+}
+
+.logoCustom:hover svg circle {
+  stroke: #e9414fff;
+  stroke-width: 6;
+  stroke-dashoffset: -50;
+  animation: rotateBorder 2s linear infinite;
+}
+
+/* Animación del texto */
+.logoCustom svg text {
+  transition: all 0.3s ease;
+}
+
+.logoCustom:hover svg text {
+  fill: #ffca1a;
+  transform: translateY(-2px);
+}
+
+/* Animación de rotación del borde */
+@keyframes rotateBorder {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dashoffset: 427;
+  }
+}
+
+/* Animación de pulso opcional */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+.logoCustom:hover {
+  animation: pulse 1.5s ease-in-out infinite;
 }

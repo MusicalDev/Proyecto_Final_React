@@ -1,0 +1,303 @@
+/* Contacto.module.css */
+
+.contenedor {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ---------------- HERO ---------------- */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.8s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.heroTexto {
+  text-align: center;
+  color: #e0e1dd;
+}
+
+
+.heroTexto p {
+font-family: "fugaz one", cursive;
+  font-size: 1.2rem;
+}
+
+/* ---------------- DESCRIPCIÓN ---------------- */
+.descripcion {
+  margin-bottom: 40px;
+}
+
+.descripcion h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.descripcion p {
+  line-height: 1.6;
+}
+
+/* ---------------- GRID CONTACTO ---------------- */
+.contactoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* ---------------- FORMULARIO CARD ---------------- */
+.formularioCard {
+  background: #f1f1f1b7;
+  padding: 30px;
+  border-radius: 10px;
+  border-left: 6px solid #223a5e;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.formularioCard h2 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #223a5e;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formGroup label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background: white;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #223a5e;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.recaptchaWrapper {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.error {
+  background-color: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #991b1b;
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+
+.error span {
+  display: block;
+}
+
+.submitButton {
+  background-color: #223a5e;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: #e9414f;
+  transform: scale(1.01);
+}
+
+.submitButton:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.infoCard {
+  background: #f1f1f1b7;
+  padding: 30px;
+  border-radius: 10px;
+  border-left: 6px solid #223a5e;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.infoCard h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  color: #223a5e;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.infoItem:hover {
+  transform: translateX(5px);
+}
+
+.infoIcono {
+  width: 50px;
+  height: 50px;
+  min-width: 50px;
+  background-color: #223a5e;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.infoIcono svg {
+  width: 28px;
+  height: 28px;
+}
+
+.infoItem h3 {
+  margin: 0 0 5px 0;
+  font-size: 1.1rem;
+  color: #223a5e;
+}
+
+.infoItem p {
+  margin: 0;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 768px) {
+  .hero {
+    height: 300px;
+  }
+
+  .logoContainer svg {
+    width: 100px;
+    height: 100px;
+  }
+
+  .heroTexto h1 {
+    font-size: 2rem;
+  }
+
+  .heroTexto p {
+    font-size: 1rem;
+  }
+
+  .contactoGrid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .formularioCard,
+  .infoCard {
+    padding: 20px;
+  }
+
+  .formularioCard h2,
+  .infoCard h2 {
+    font-size: 1.5rem;
+  }
+
+  .descripcion h2 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contenedor {
+    padding: 15px;
+  }
+
+  .hero {
+    height: 250px;
+    margin-top: 10px;
+  }
+
+  .logoContainer svg {
+    width: 80px;
+    height: 80px;
+  }
+
+  .heroTexto h1 {
+    font-size: 1.5rem;
+  }
+
+  .heroTexto p {
+    font-size: 0.9rem;
+  }
+
+  .submitButton {
+    width: 100%;
+  }
+}

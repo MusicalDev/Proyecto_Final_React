@@ -1,4 +1,4 @@
-const BagIcon = () => {
+const CartIcon = ({ className = "" }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -6,17 +6,19 @@ const BagIcon = () => {
       height="24"
       viewBox="0 0 24 24"
       fill="none"
-      stroke="currentColor"
+      stroke="#e0e1dd "
       strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className="lucide lucide-shopping-bag-icon lucide-shopping-bag"
+      className={`lucide lucide-shopping-cart ${className}`}
     >
-      <path d="M16 10a4 4 0 0 1-8 0" />
-      <path d="M3.103 6.034h17.794" />
-      <path d="M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z" />
+      <circle cx="9" cy="21" r="1" />
+      <circle cx="20" cy="21" r="1" />
+      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
     </svg>
   );
 };
 
-export default BagIcon;
+export default CartIcon;
+
+

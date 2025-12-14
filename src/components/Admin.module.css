@@ -1,0 +1,514 @@
+/* Admin.module.css */
+
+.contenedor {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ---------------- HERO ---------------- */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  background: linear-gradient(135deg, #0d1b2a 0%, #1b263b 100%);
+  overflow: hidden;
+  border-radius: 10px;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.heroTexto {
+  text-align: center;
+  color: #e0e1dd;
+}
+
+.heroTexto h1 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.heroTexto p {
+  font-family: "fugaz one", cursive;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+/* ---------------- MENSAJES ---------------- */
+.mensajeExito,
+.mensajeError {
+  padding: 15px 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+  font-weight: 600;
+  text-align: center;
+  animation: slideDown 0.3s ease-out;
+}
+
+.mensajeExito {
+  background-color: #d1fae5;
+  border: 2px solid #6ee7b7;
+  color: #065f46;
+}
+
+.mensajeError {
+  background-color: #fee2e2;
+  border: 2px solid #fca5a5;
+  color: #991b1b;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------------- GRID ADMIN ---------------- */
+.adminGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+/* ---------------- FORMULARIO CARD ---------------- */
+.formularioCard {
+  background: #f1f1f1b7;
+  padding: 30px;
+  border-radius: 10px;
+  border-left: 6px solid #223a5e;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  min-height: 750px;
+  max-height: 950px;
+  display: flex;
+  flex-direction: column;
+}
+
+.formularioCard h2 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  color: #223a5e;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.formGroup label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.input,
+.textarea,
+.inputFile {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background: white;
+}
+
+.inputFile {
+  cursor: pointer;
+  padding: 10px;
+}
+
+.inputFile::-webkit-file-upload-button {
+  background-color: #223a5e;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.inputFile::-webkit-file-upload-button:hover {
+  background-color: #1a2d4a;
+}
+
+.input:focus,
+.textarea:focus,
+.inputFile:focus {
+  outline: none;
+  border-color: #223a5e;
+}
+
+/* Previsualización de imagen */
+.previsualizacionContainer {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.previsualizacion {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 8px;
+  border: 2px solid #223a5e;
+  object-fit: cover;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+}
+
+.submitButton {
+  background-color: #223a5e;
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.submitButton:hover:not(:disabled) {
+  background-color: #e9414f;
+  transform: scale(1.05);
+}
+
+.submitButton:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ---------------- PRODUCTOS CARD ---------------- */
+.productosCard {
+  background: #f1f1f1b7;
+  padding: 30px;
+  border-radius: 10px;
+  border-left: 6px solid #223a5e;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: 750px;
+}
+
+.productosCard h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #223a5e;
+}
+
+.cargandoTexto,
+.sinProductos {
+  text-align: center;
+  color: #666;
+  padding: 40px 20px;
+  font-size: 1.1rem;
+}
+
+.listaProductos {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.listaProductos::-webkit-scrollbar {
+  width: 8px;
+}
+
+.listaProductos::-webkit-scrollbar-track {
+  background: #e5e7eb;
+  border-radius: 4px;
+}
+
+.listaProductos::-webkit-scrollbar-thumb {
+  background: #223a5e;
+  border-radius: 4px;
+}
+
+.listaProductos::-webkit-scrollbar-thumb:hover {
+  background: #1a2d4a;
+}
+
+/* ---------------- PRODUCTO ITEM ---------------- */
+.productoItem {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.productoItem:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.productoImagen {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid #e5e7eb;
+}
+
+.productoInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.productoInfo h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #223a5e;
+}
+
+.productoPrecio {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #e9414f;
+}
+
+.productoCategoria {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* ---------------- BOTONES DE ACCIÓN ---------------- */
+.botonesAccion {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.botonEditar {
+  background-color: #223a5e;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.botonEditar:hover {
+  background-color: #1b263b;
+  transform: scale(1.02);
+}
+
+.botonEliminar {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  background-color: #f06969ff;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.botonEliminar:hover {
+  background-color: #e9414f;
+  transform: scale(1.05);
+}
+
+/* ---------------- FORMULARIO DE EDICIÓN ---------------- */
+.formularioEdicion {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #2563eb;
+  margin-top: 10px;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+}
+
+.formularioEdicion h3 {
+  color: #223a5e;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+}
+
+.botonesEdicion {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.botonGuardar {
+  background-color: #16a34a;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.botonGuardar:hover:not(:disabled) {
+  background-color: #15803d;
+  transform: scale(1.02);
+}
+
+.botonGuardar:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.botonCancelar {
+  background-color: #6b7280;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.botonCancelar:hover {
+  background-color: #4b5563;
+  transform: scale(1.02);
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 768px) {
+  .hero {
+    height: 200px;
+  }
+
+  .heroTexto h1 {
+    font-size: 2rem;
+  }
+
+  .heroTexto p {
+    font-size: 1rem;
+  }
+
+  .adminGrid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .formularioCard,
+  .productosCard {
+    padding: 20px;
+  }
+
+  .formularioCard h2,
+  .productosCard h2 {
+    font-size: 1.5rem;
+  }
+
+  .productosCard {
+    max-height: 500px;
+    height: auto;
+  }
+
+  .formularioCard {
+    height: auto;
+    min-height: auto;
+  }
+
+  .botonesAccion {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .botonEditar {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contenedor {
+    padding: 15px;
+  }
+
+  .hero {
+    height: 180px;
+    margin-top: 10px;
+  }
+
+  .heroTexto h1 {
+    font-size: 1.5rem;
+  }
+
+  .heroTexto p {
+    font-size: 0.9rem;
+  }
+
+  .submitButton {
+    width: 100%;
+  }
+
+  .productoImagen {
+    width: 60px;
+    height: 60px;
+  }
+
+  .productoInfo h3 {
+    font-size: 1rem;
+  }
+
+  .productoPrecio {
+    font-size: 1rem;
+  }
+
+  .botonesEdicion {
+    flex-direction: column;
+  }
+
+  .botonGuardar,
+  .botonCancelar {
+    width: 100%;
+  }
+}
